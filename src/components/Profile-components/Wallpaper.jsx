@@ -1,3 +1,5 @@
+import "./Wallpaper.css";
+
 export const Wallpaper = () => {
   return (
     <div className="content-main-wellpaper">

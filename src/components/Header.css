@@ -1,0 +1,19 @@
+header {
+  background-color: burlywood;
+  display: flex;
+  align-items: center;
+  grid-column: 1/11;
+}
+.header-logo {
+  margin-left: 60px;
+  width: 100px;
+}
+.header-label {
+  margin-left: 60px;
+}
+.header-label-link {
+  font-style: italic;
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}

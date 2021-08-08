@@ -1,0 +1,49 @@
+.content-main {
+  grid-column: 3/11;
+  grid-row: 3/6;
+  /* background-color: blanchedalmond; */
+  display: grid;
+  grid-template-rows: repeat(3, 180px);
+  grid-template-columns: repeat(8, 100px);
+  grid-gap: 15px;
+}
+.content-profile {
+  grid-column: 1/11;
+  display: flex;
+}
+.content-profile-myphoto {
+  width: 215px;
+  height: 180px;
+}
+.introduce-yourself {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+}
+.content-my-post {
+  grid-column: 1/11;
+}
+.content-my-post-headdig {
+  font-size: 30px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+.content-my-post-input {
+  width: 800px;
+  height: 60px;
+  padding: 5px 10px;
+  font-size: 25px;
+}
+.content-my-post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-my-post-btn-send {
+  margin-top: 15px;
+  padding: 15px 35px;
+  margin-left: 550px;
+}
