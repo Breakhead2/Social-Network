@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 1135px;
+  display: grid;
+  grid-template-rows: 100px repeat(4, 180px) 80px;
+  grid-template-columns: repeat(10, 100px);
+  margin: 0 auto;
+  grid-gap: 15px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  background-color: burlywood;
+  display: flex;
+  align-items: center;
+  grid-column: 1/11;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-logo {
+  margin-left: 60px;
+  width: 100px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-label {
+  margin-left: 60px;
+}
+.header-label-link {
+  font-style: italic;
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+.nav-bar {
+  grid-column: 1/3;
+  grid-row: 2/6;
+  background-color: burlywood;
   display: flex;
   flex-direction: column;
+}
+.nav-bar-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.nav-bar-down {
+  display: flex;
+  flex-direction: column;
+}
+.nav-bar-item {
+  font-size: 20px;
+  color: azure;
+  margin: 10px 0px 10px 20px;
+  cursor: pointer;
+}
+.content-main {
+  grid-column: 3/11;
+  grid-row: 3/6;
+  /* background-color: blanchedalmond; */
+}
+.content-main-wellpaper {
+  grid-column: 3/11;
+}
+.content-main-wellpaper-img {
+  width: 905px;
+  height: 180px;
+}
+.content-profile {
+  grid-column: 3/11;
+  display: flex;
+}
+.content-profile-myphoto {
+  width: 215px;
+  height: 180px;
+}
+.introduce-yourself {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+}
+footer {
+  grid-column: 1/11;
+  background-color: burlywood;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer-author {
+  font-style: italic;
+  text-align: center;
+  margin-top: 30px;
 }
