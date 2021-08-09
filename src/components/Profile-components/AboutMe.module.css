@@ -1,0 +1,15 @@
+.profile {
+  grid-column: 1/11;
+  display: flex;
+}
+.myphoto {
+  width: 215px;
+  height: 180px;
+}
+.introduce {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+}

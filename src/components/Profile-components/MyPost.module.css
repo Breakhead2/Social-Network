@@ -1,0 +1,25 @@
+.myPost {
+  grid-column: 1/11;
+}
+.headdig {
+  font-size: 30px;
+  margin-bottom: 15px;
+  margin-left: 30px;
+}
+.input {
+  width: 800px;
+  height: 60px;
+  padding: 5px 10px;
+  font-size: 25px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn_send {
+  margin-top: 15px;
+  padding: 15px 35px;
+  margin-left: 550px;
+}

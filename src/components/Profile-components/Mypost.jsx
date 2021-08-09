@@ -1,14 +1,12 @@
+import style from "./MyPost.module.css";
+
 export const Mypost = () => {
   return (
-    <div className="content-my-post">
-      <h3 className="content-my-post-headdig">My Posts</h3>
-      <div className="content-my-post-form">
-        <input
-          className="content-my-post-input"
-          type="text"
-          placeholder="My news..."
-        />
-        <button className="content-my-post-btn-send">Send</button>
+    <div className={style.myPost}>
+      <h3 className={style.headdig}>My Posts</h3>
+      <div className={style.form}>
+        <input className={style.input} type="text" placeholder="My news..." />
+        <button className={style.btn_send}>Send</button>
       </div>
     </div>
   );

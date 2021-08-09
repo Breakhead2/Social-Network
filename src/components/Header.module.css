@@ -4,14 +4,14 @@ header {
   align-items: center;
   grid-column: 1/11;
 }
-.header-logo {
+.logo {
   margin-left: 60px;
   width: 100px;
 }
-.header-label {
+.label {
   margin-left: 60px;
 }
-.header-label-link {
+.label_link {
   font-style: italic;
   text-decoration: none;
   color: black;

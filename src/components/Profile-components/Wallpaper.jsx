@@ -1,10 +1,10 @@
-import "./Wallpaper.css";
+import style from "./Wallpaper.module.css";
 
 export const Wallpaper = () => {
   return (
-    <div className="content-main-wellpaper">
+    <div className={style.wellpaper}>
       <img
-        className="content-main-wellpaper-img"
+        className={style.wellpaper_img}
         alt="wellpaper"
         src="images/wellpaper.png"
       />

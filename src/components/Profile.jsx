@@ -1,11 +1,11 @@
 import { Mypost } from "./Profile-components/Mypost";
 import { AboutMe } from "./Profile-components/AboutMe";
 import { Wallpaper } from "./Profile-components/Wallpaper";
-import "./Profile.css";
+import style from "./Profile.module.css";
 
 export const Profile = () => {
   return (
-    <div className="content-main">
+    <div className={style.main}>
       <Wallpaper />
       <AboutMe />
       <Mypost />
