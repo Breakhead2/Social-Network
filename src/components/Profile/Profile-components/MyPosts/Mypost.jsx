@@ -1,4 +1,5 @@
 import style from "./MyPost.module.css";
+import { Post } from "./Post/Post";
 
 export const Mypost = () => {
   return (
@@ -8,6 +9,8 @@ export const Mypost = () => {
         <input className={style.input} type="text" placeholder="My news..." />
         <button className={style.btn_send}>Send</button>
       </div>
+      <Post message="Hello, where are you disappear?" />
+      <Post message="Dude, WTF!? Where is my money?" />
     </div>
   );
 };

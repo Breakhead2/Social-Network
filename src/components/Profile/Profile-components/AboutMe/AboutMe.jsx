@@ -10,7 +10,7 @@ export const AboutMe = () => {
       />
       <div className={style.introduce}>
         <h3>Denis Sazonov</h3>
-        <p>Date of birth: 06 march 1993</p>
+        <p>Date of birth: 06 march</p>
         <p>City: Samara</p>
         <p>Education: SSAU 2016</p>
       </div>

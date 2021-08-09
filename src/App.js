@@ -1,8 +1,8 @@
 import "./App.css";
-import { Footer } from "./components/Footer";
-import { Header } from "./components/Header";
-import { Menu } from "./components/Menu";
-import { Profile } from "./components/Profile";
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { Menu } from "./components/Menu/Menu";
+import { Profile } from "./components/Profile/Profile";
 
 export const App = () => {
   return (

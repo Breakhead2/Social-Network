@@ -5,7 +5,7 @@
 .wrapper {
   width: 1135px;
   display: grid;
-  grid-template-rows: 100px repeat(4, 180px) 80px;
+  /* grid-template-rows: 100px repeat(4, 180px) 80px; */
   grid-template-columns: repeat(10, 100px);
   margin: 0 auto;
   grid-gap: 15px;

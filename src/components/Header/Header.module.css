@@ -1,8 +1,9 @@
 header {
-  background-color: burlywood;
+  background-color: #85befc;
   display: flex;
   align-items: center;
   grid-column: 1/11;
+  height: 100px;
 }
 .logo {
   margin-left: 60px;
@@ -16,4 +17,8 @@ header {
   text-decoration: none;
   color: black;
   font-size: 30px;
+}
+.mark {
+  font-style: italic;
+  color: white;
 }

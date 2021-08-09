@@ -1,5 +1,6 @@
 .myPost {
   grid-column: 1/11;
+  grid-row: 3/5;
 }
 .headdig {
   font-size: 30px;
