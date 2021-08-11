@@ -1,11 +1,17 @@
 .item {
   margin-left: 30px;
   display: flex;
+  justify-content: space-between;
+  grid-column: span 3;
   align-items: center;
   margin-top: 30px;
   border: 1px solid #85befc;
   width: 860px;
   padding: 5px;
+}
+.left {
+  display: flex;
+  align-items: center;
 }
 .item:last-of-type {
   margin-bottom: 30px;
@@ -19,4 +25,16 @@
   margin-left: 30px;
   font-size: 25px;
   font-style: italic;
+}
+.like {
+  color: plum;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: all, 1s;
+}
+.like:hover {
+  color: blueviolet;
+}
+.likesCount {
+  color: blueviolet;
 }

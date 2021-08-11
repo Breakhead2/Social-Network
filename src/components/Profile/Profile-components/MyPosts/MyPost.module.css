@@ -23,4 +23,15 @@
   margin-top: 15px;
   padding: 15px 35px;
   margin-left: 550px;
+  color: white;
+  background-color: #85befc;
+  transition: all, 1s;
+  border-color: blueviolet;
+  cursor: pointer;
+  font-weight: 800;
+}
+.btn_send:hover {
+  color: #85befc;
+  background-color: #fff;
+  border-color: blueviolet;
 }

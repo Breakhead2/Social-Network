@@ -9,8 +9,8 @@ export const Mypost = () => {
         <input className={style.input} type="text" placeholder="My news..." />
         <button className={style.btn_send}>Send</button>
       </div>
-      <Post message="Hello, where are you disappear?" />
-      <Post message="Dude, WTF!? Where is my money?" />
+      <Post message="Hello, where are you disappear?" likesCount="12" />
+      <Post message="Dude, WTF!? Where is my money?" likesCount="4" />
     </div>
   );
 };

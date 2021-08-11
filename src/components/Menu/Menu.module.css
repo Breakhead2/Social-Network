@@ -21,3 +21,14 @@
   margin: 10px 0px 10px 20px;
   cursor: pointer;
 }
+a:hover {
+  color: blueviolet;
+}
+.active {
+  color: blueviolet;
+}
+a {
+  text-decoration: none;
+  color: white;
+  transition: all, 1s;
+}

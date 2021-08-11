@@ -12,3 +12,7 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 20px;
 }
+.wrapper-content {
+  grid-column: 3/11;
+  grid-row: 2/6;
+}
