@@ -15,4 +15,5 @@
 .wrapper-content {
   grid-column: 3/11;
   grid-row: 2/6;
+  min-height: 800px;
 }
