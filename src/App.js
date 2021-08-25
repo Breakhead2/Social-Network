@@ -9,18 +9,26 @@ import { News } from "./components/News/News";
 import { Music } from "./components/Music/Music";
 import { Settings } from "./components/Settings/Settings";
 
-export const App = () => {
+export const App = (props) => {
   return (
     <BrowserRouter>
       <div className="wrapper">
         <Header />
         <Menu />
         <div className="wrapper-content">
-          <Route path="/profile" component={Profile} />
-          <Route path="/messages" component={Messages} />
-          <Route path="/news" component={News} />
-          <Route path="/music" component={Music} />
-          <Route path="/settings" component={Settings} />
+          <Route
+            path="/profile"
+            render={() => <Profile posts={props.posts} />}
+          />
+          <Route
+            path="/messages"
+            render={() => (
+              <Messages chatInfo={props.chatInfo} messages={props.messages} />
+            )}
+          />
+          <Route path="/news" render={() => <News />} />
+          <Route path="/music" render={() => <Music />} />
+          <Route path="/settings" render={() => <Settings />} />
         </div>
         <Footer />
       </div>

@@ -1,13 +1,8 @@
 import style from "./MyPost.module.css";
 import { Post } from "./Post/Post";
 
-export const Mypost = () => {
-  let posts = [
-    { id: 1, text: "Hello, where are you disappear?", likesCount: 12 },
-    { id: 1, text: "Dude, WTF!? Where is my money?", likesCount: 4 },
-  ];
-
-  let postsElements = posts.map((post) => (
+export const Mypost = (props) => {
+  let postsElements = props.posts.map((post) => (
     <Post message={post.text} likesCount={post.likesCount} />
   ));
 
