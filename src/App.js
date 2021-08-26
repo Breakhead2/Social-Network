@@ -18,13 +18,11 @@ export const App = (props) => {
         <div className="wrapper-content">
           <Route
             path="/profile"
-            render={() => <Profile posts={props.posts} />}
+            render={() => <Profile profilePage={props.state.profilePage} />}
           />
           <Route
             path="/messages"
-            render={() => (
-              <Messages chatInfo={props.chatInfo} messages={props.messages} />
-            )}
+            render={() => <Messages messagePage={props.state.messagePage} />}
           />
           <Route path="/news" render={() => <News />} />
           <Route path="/music" render={() => <Music />} />

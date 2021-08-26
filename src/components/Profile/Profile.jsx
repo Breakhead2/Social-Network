@@ -8,7 +8,7 @@ export const Profile = (props) => {
     <div className={style.main}>
       <Wallpaper />
       <AboutMe />
-      <Mypost posts={props.posts} />
+      <Mypost posts={props.profilePage.posts} />
     </div>
   );
 };

@@ -1,5 +1,7 @@
 .item {
   margin: 15px 0px;
+  display: flex;
+  align-items: center;
 }
 .item .active {
   color: blueviolet;
@@ -9,4 +11,10 @@
 .item a {
   text-decoration: none;
   color: black;
+}
+.item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-right: 20px;
 }

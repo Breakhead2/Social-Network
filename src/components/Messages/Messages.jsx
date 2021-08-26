@@ -3,10 +3,10 @@ import { ChatRoom } from "./ChatRoom/ChatRoom";
 import style from "./Messages.module.css";
 
 export const Messages = (props) => {
-  let ChatRoomElements = props.chatInfo.map((room) => (
+  let ChatRoomElements = props.messagePage.chatInfo.map((room) => (
     <ChatRoom name={room.name} id={room.id} />
   ));
-  let ChatItemElements = props.messages.map((message) => (
+  let ChatItemElements = props.messagePage.messages.map((message) => (
     <ChatItem message={message.text} />
   ));
 
