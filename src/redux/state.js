@@ -18,6 +18,25 @@ let state = {
       { id: 2, text: "How are you?" },
     ],
   },
-};
+  sideBar: {
+    friends: [
+      { id: 1, name: "Dmitriy" },
+      { id: 2, name: "Nickolay" },
+      { id: 3, name: "Ivan" },
+      { id: 4, name: "Denis" },
+      { id: 5, name: "Anna" },
+    ],
+  },
 
+  addPost(message) {
+    console.log(this); // указывает на объект props компонента MyPost
+    let newObj = {
+      id: this.posts.length + 1,
+      text: message,
+      likesCount: 0,
+    };
+    this.posts.push(newObj);
+    console.log(state);
+  },
+};
 export default state;

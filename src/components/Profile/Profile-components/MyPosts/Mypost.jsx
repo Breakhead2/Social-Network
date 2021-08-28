@@ -1,17 +1,32 @@
 import style from "./MyPost.module.css";
 import { Post } from "./Post/Post";
+import React from "react";
 
 export const Mypost = (props) => {
   let postsElements = props.posts.map((post) => (
     <Post message={post.text} img={post.id} likesCount={post.likesCount} />
   ));
 
+  let text = React.createRef();
+
+  const addText = () => {
+    props.addPost(text.current.value);
+    text.current.value = "";
+  };
+
   return (
     <div className={style.myPost}>
       <h3 className={style.headdig}>My Posts</h3>
       <div className={style.form}>
-        <input className={style.input} type="text" placeholder="My news..." />
-        <button className={style.btn_send}>Send</button>
+        <input
+          className={style.input}
+          ref={text}
+          type="text"
+          placeholder="My news..."
+        />
+        <button className={style.btn_send} onClick={addText}>
+          Send
+        </button>
       </div>
       {postsElements}
     </div>

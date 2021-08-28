@@ -1,0 +1,17 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 50px;
+  width: 210px;
+}
+.heading {
+  color: aqua;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.sideBarBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

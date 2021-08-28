@@ -1,0 +1,23 @@
+.up {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.down {
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  font-size: 20px;
+  margin: 10px 0px 10px 20px;
+  cursor: pointer;
+}
+.item .active {
+  color: blueviolet;
+}
+.item a {
+  text-decoration: none;
+  transition: all, 1s;
+  color: white;
+}

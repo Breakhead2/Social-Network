@@ -14,11 +14,16 @@ export const App = (props) => {
     <BrowserRouter>
       <div className="wrapper">
         <Header />
-        <Menu />
+        <Menu sideBar={props.state.sideBar} />
         <div className="wrapper-content">
           <Route
             path="/profile"
-            render={() => <Profile profilePage={props.state.profilePage} />}
+            render={() => (
+              <Profile
+                profilePage={props.state.profilePage}
+                addPost={props.state.addPost}
+              />
+            )}
           />
           <Route
             path="/messages"
