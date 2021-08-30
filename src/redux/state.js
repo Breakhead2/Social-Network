@@ -1,4 +1,6 @@
-import { rerenderUserInterface } from "../rerender";
+let rerenderUserInterface = () => {
+  console.log("Object state changed");
+};
 
 let state = {
   profilePage: {
@@ -6,7 +8,7 @@ let state = {
       { id: 1, text: "Hello, where are you disappear?", likesCount: 12 },
       { id: 1, text: "Dude, WTF!? Where is my money?", likesCount: 4 },
     ],
-    newPostText: "Some text",
+    newPostText: "",
   },
   messagePage: {
     chatInfo: [
@@ -49,6 +51,10 @@ export function updatePost(message) {
   state.profilePage.newPostText = message;
   rerenderUserInterface(state);
   console.log(state);
+}
+
+export function rerending(observer) {
+  rerenderUserInterface = observer;
 }
 
 export default state;
