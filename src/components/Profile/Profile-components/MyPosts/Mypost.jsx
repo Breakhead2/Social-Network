@@ -11,7 +11,10 @@ export const Mypost = (props) => {
 
   const addText = () => {
     props.addPost(text.current.value);
-    text.current.value = "";
+  };
+
+  const updatePost = () => {
+    props.updatePost(text.current.value);
   };
 
   return (
@@ -23,6 +26,8 @@ export const Mypost = (props) => {
           ref={text}
           type="text"
           placeholder="My news..."
+          onChange={updatePost}
+          value={props.newPostText}
         />
         <button className={style.btn_send} onClick={addText}>
           Send

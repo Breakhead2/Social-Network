@@ -1,9 +1,12 @@
+import { rerenderUserInterface } from "../rerender";
+
 let state = {
   profilePage: {
     posts: [
       { id: 1, text: "Hello, where are you disappear?", likesCount: 12 },
       { id: 1, text: "Dude, WTF!? Where is my money?", likesCount: 4 },
     ],
+    newPostText: "Some text",
   },
   messagePage: {
     chatInfo: [
@@ -27,16 +30,25 @@ let state = {
       { id: 5, name: "Anna" },
     ],
   },
-
-  addPost(message) {
-    console.log(this); // указывает на объект props компонента MyPost
-    let newObj = {
-      id: this.posts.length + 1,
-      text: message,
-      likesCount: 0,
-    };
-    this.posts.push(newObj);
-    console.log(state);
-  },
 };
+
+export function addPost(message) {
+  let newObj = {
+    id: state.profilePage.posts.length + 1,
+    text: message,
+    likesCount: 0,
+  };
+
+  state.profilePage.posts.push(newObj);
+  rerenderUserInterface(state);
+  state.profilePage.newPostText = "";
+  console.log(state);
+}
+
+export function updatePost(message) {
+  state.profilePage.newPostText = message;
+  rerenderUserInterface(state);
+  console.log(state);
+}
+
 export default state;

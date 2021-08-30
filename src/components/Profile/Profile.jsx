@@ -8,7 +8,12 @@ export const Profile = (props) => {
     <div className={style.main}>
       <Wallpaper />
       <AboutMe />
-      <Mypost posts={props.profilePage.posts} addPost={props.addPost} />
+      <Mypost
+        posts={props.profilePage.posts}
+        addPost={props.addPost}
+        newPostText={props.profilePage.newPostText}
+        updatePost={props.updatePost}
+      />
     </div>
   );
 };
