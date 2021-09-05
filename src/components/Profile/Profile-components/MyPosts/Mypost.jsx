@@ -3,6 +3,7 @@ import { Post } from "./Post/Post";
 import React from "react";
 
 export const Mypost = (props) => {
+  debugger;
   let postsElements = props.posts.map((post) => (
     <Post message={post.text} img={post.id} likesCount={post.likesCount} />
   ));
@@ -10,11 +11,19 @@ export const Mypost = (props) => {
   let text = React.createRef();
 
   const addText = () => {
-    props.addPost(text.current.value);
+    let action = {
+      type: "ADD-POST",
+      message: text.current.value,
+    };
+    props.dispatch(action);
   };
 
   const updatePost = () => {
-    props.updatePost(text.current.value);
+    let action = {
+      type: "UPDATE-POST",
+      message: text.current.value,
+    };
+    props.dispatch(action);
   };
 
   return (

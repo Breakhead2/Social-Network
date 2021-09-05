@@ -8,6 +8,7 @@ let store = {
       newPostText: "",
     },
     messagePage: {
+      newMessage: "say Hello",
       chatInfo: [
         { id: 1, name: "Dmitriy" },
         { id: 2, name: "Nickolay" },
@@ -30,31 +31,43 @@ let store = {
       ],
     },
   },
+  _callsSubscriber() {
+    console.log("Object state changed");
+  },
+
   get State() {
     return this._state;
-  },
-  addPost(message) {
-    let newObj = {
-      id: this._state.profilePage.posts.length + 1,
-      text: message,
-      likesCount: 0,
-    };
-
-    this._state.profilePage.posts.push(newObj);
-    this._callsSubscriber(this._state);
-    this._state.profilePage.newPostText = "";
-    //console.log(this.State);
-  },
-  updatePost(message) {
-    this._state.profilePage.newPostText = message;
-    this._callsSubscriber(this._state);
-    //console.log(this.State);
   },
   subscribe(observer) {
     this._callsSubscriber = observer;
   },
-  _callsSubscriber() {
-    console.log("Object state changed");
+
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newObj = {
+        id: this._state.profilePage.posts.length + 1,
+        text: action.message,
+        likesCount: 0,
+      };
+
+      this._state.profilePage.posts.push(newObj);
+      this._callsSubscriber(this._state);
+      this._state.profilePage.newPostText = "";
+    } else if (action.type === "UPDATE-POST") {
+      this._state.profilePage.newPostText = action.message;
+      this._callsSubscriber(this._state);
+    } else if (action.type === "ADD-MESSAGE") {
+      let newObj = {
+        id: this._state.messagePage.messages.length + 1,
+        text: action.message,
+      };
+      this._state.messagePage.messages.push(newObj);
+      this._callsSubscriber(this._state);
+      this._state.messagePage.newMessage = "";
+    } else if (action.type === "UPDATE-MESSAGE") {
+      this._state.messagePage.newMessage = action.messageText;
+      this._callsSubscriber(this._state);
+    }
   },
 };
 

@@ -20,14 +20,18 @@ export const App = (props) => {
           render={() => (
             <Profile
               profilePage={props.state.profilePage}
-              addPost={props.addPost}
-              updatePost={props.updatePost}
+              dispatch={props.dispatch}
             />
           )}
         />
         <Route
           path="/messages"
-          render={() => <Messages messagePage={props.state.messagePage} />}
+          render={() => (
+            <Messages
+              messagePage={props.state.messagePage}
+              dispatch={props.dispatch}
+            />
+          )}
         />
         <Route path="/news" render={() => <News />} />
         <Route path="/music" render={() => <Music />} />

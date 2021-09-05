@@ -13,8 +13,20 @@ export const Messages = (props) => {
 
   let message = React.createRef();
 
+  const updateMessages = () => {
+    let action = {
+      type: "UPDATE-MESSAGE",
+      messageText: message.current.value,
+    };
+    props.dispatch(action);
+  };
+
   const addMessage = () => {
-    alert(message.current.value);
+    let action = {
+      type: "ADD-MESSAGE",
+      message: message.current.value,
+    };
+    props.dispatch(action);
   };
 
   return (
@@ -26,8 +38,9 @@ export const Messages = (props) => {
           <input
             className={style.input}
             ref={message}
+            value={props.messagePage.newMessage}
+            onChange={updateMessages}
             type="text"
-            placeholder="Send message"
           />
           <button className={style.btn_send} onClick={addMessage}>
             Send
