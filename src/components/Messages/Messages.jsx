@@ -2,6 +2,7 @@ import { ChatItem } from "./ChatItem/ChatItem";
 import React from "react";
 import { ChatRoom } from "./ChatRoom/ChatRoom";
 import style from "./Messages.module.css";
+import { Action } from "../../redux/state";
 
 export const Messages = (props) => {
   let ChatRoomElements = props.messagePage.chatInfo.map((room) => (
@@ -14,18 +15,12 @@ export const Messages = (props) => {
   let message = React.createRef();
 
   const updateMessages = () => {
-    let action = {
-      type: "UPDATE-MESSAGE",
-      messageText: message.current.value,
-    };
+    let action = new Action("UPDATE-MESSAGE", null, message.current.value);
     props.dispatch(action);
   };
 
   const addMessage = () => {
-    let action = {
-      type: "ADD-MESSAGE",
-      message: message.current.value,
-    };
+    let action = new Action("ADD-MESSAGE", null, message.current.value);
     props.dispatch(action);
   };
 
@@ -40,6 +35,7 @@ export const Messages = (props) => {
             ref={message}
             value={props.messagePage.newMessage}
             onChange={updateMessages}
+            placeholder={"write you message"}
             type="text"
           />
           <button className={style.btn_send} onClick={addMessage}>

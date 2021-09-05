@@ -8,7 +8,7 @@ let store = {
       newPostText: "",
     },
     messagePage: {
-      newMessage: "say Hello",
+      newMessage: "",
       chatInfo: [
         { id: 1, name: "Dmitriy" },
         { id: 2, name: "Nickolay" },
@@ -43,6 +43,7 @@ let store = {
   },
 
   dispatch(action) {
+    debugger;
     if (action.type === "ADD-POST") {
       let newObj = {
         id: this._state.profilePage.posts.length + 1,
@@ -65,10 +66,18 @@ let store = {
       this._callsSubscriber(this._state);
       this._state.messagePage.newMessage = "";
     } else if (action.type === "UPDATE-MESSAGE") {
-      this._state.messagePage.newMessage = action.messageText;
+      this._state.messagePage.newMessage = action.message;
       this._callsSubscriber(this._state);
     }
   },
 };
+
+export function Action(type, ...rest) {
+  let [id, message] = rest;
+
+  this.type = type;
+  this.id = id;
+  this.message = message;
+}
 
 export default store;

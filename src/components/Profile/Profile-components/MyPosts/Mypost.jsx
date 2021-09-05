@@ -1,9 +1,9 @@
 import style from "./MyPost.module.css";
 import { Post } from "./Post/Post";
 import React from "react";
+import { Action } from "../../../../redux/state";
 
 export const Mypost = (props) => {
-  debugger;
   let postsElements = props.posts.map((post) => (
     <Post message={post.text} img={post.id} likesCount={post.likesCount} />
   ));
@@ -11,18 +11,14 @@ export const Mypost = (props) => {
   let text = React.createRef();
 
   const addText = () => {
-    let action = {
-      type: "ADD-POST",
-      message: text.current.value,
-    };
+    debugger;
+    let action = new Action("ADD-POST", null, text.current.value);
     props.dispatch(action);
   };
 
   const updatePost = () => {
-    let action = {
-      type: "UPDATE-POST",
-      message: text.current.value,
-    };
+    debugger;
+    let action = new Action("UPDATE-POST", null, text.current.value);
     props.dispatch(action);
   };
 
