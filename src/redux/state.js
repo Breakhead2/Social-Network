@@ -1,3 +1,7 @@
+import { profileReducer } from "./profileReducer";
+import { messageReducer } from "./messageReducer";
+import { sidebarReducer } from "./sidebarReducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -43,32 +47,11 @@ let store = {
   },
 
   dispatch(action) {
-    debugger;
-    if (action.type === "ADD-POST") {
-      let newObj = {
-        id: this._state.profilePage.posts.length + 1,
-        text: action.message,
-        likesCount: 0,
-      };
+    this._state.profilePage = profileReducer(action, this._state.profilePage);
+    this._state.messagePage = messageReducer(action, this._state.messagePage);
+    this._state.sideBar = sidebarReducer(action, this._state.sideBar);
 
-      this._state.profilePage.posts.push(newObj);
-      this._callsSubscriber(this._state);
-      this._state.profilePage.newPostText = "";
-    } else if (action.type === "UPDATE-POST") {
-      this._state.profilePage.newPostText = action.message;
-      this._callsSubscriber(this._state);
-    } else if (action.type === "ADD-MESSAGE") {
-      let newObj = {
-        id: this._state.messagePage.messages.length + 1,
-        text: action.message,
-      };
-      this._state.messagePage.messages.push(newObj);
-      this._callsSubscriber(this._state);
-      this._state.messagePage.newMessage = "";
-    } else if (action.type === "UPDATE-MESSAGE") {
-      this._state.messagePage.newMessage = action.message;
-      this._callsSubscriber(this._state);
-    }
+    this._callsSubscriber(this._state);
   },
 };
 
