@@ -1,7 +1,7 @@
 import style from "./MyPost.module.css";
 import { Post } from "./Post/Post";
 import React from "react";
-import { Action } from "../../../../redux/state";
+import { actionCreator } from "../../../../redux/store-redux";
 
 export const Mypost = (props) => {
   let postsElements = props.posts.map((post) => (
@@ -12,13 +12,13 @@ export const Mypost = (props) => {
 
   const addText = () => {
     debugger;
-    let action = new Action("ADD-POST", null, text.current.value);
+    let action = actionCreator("ADD-POST", null, text.current.value);
     props.dispatch(action);
   };
 
   const updatePost = () => {
     debugger;
-    let action = new Action("UPDATE-POST", null, text.current.value);
+    let action = actionCreator("UPDATE-POST", null, text.current.value);
     props.dispatch(action);
   };
 

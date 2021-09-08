@@ -2,7 +2,7 @@ import { ChatItem } from "./ChatItem/ChatItem";
 import React from "react";
 import { ChatRoom } from "./ChatRoom/ChatRoom";
 import style from "./Messages.module.css";
-import { Action } from "../../redux/state";
+import { actionCreator } from "../../redux/store-redux";
 
 export const Messages = (props) => {
   let ChatRoomElements = props.messagePage.chatInfo.map((room) => (
@@ -15,12 +15,12 @@ export const Messages = (props) => {
   let message = React.createRef();
 
   const updateMessages = () => {
-    let action = new Action("UPDATE-MESSAGE", null, message.current.value);
+    let action = actionCreator("UPDATE-MESSAGE", null, message.current.value);
     props.dispatch(action);
   };
 
   const addMessage = () => {
-    let action = new Action("ADD-MESSAGE", null, message.current.value);
+    let action = actionCreator("ADD-MESSAGE", null, message.current.value);
     props.dispatch(action);
   };
 

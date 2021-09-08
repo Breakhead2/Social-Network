@@ -55,12 +55,14 @@ let store = {
   },
 };
 
-export function Action(type, ...rest) {
+export function actionCreator(type, ...rest) {
   let [id, message] = rest;
 
-  this.type = type;
-  this.id = id;
-  this.message = message;
+  return {
+    type: type,
+    id: id,
+    message: message,
+  };
 }
 
 export default store;
