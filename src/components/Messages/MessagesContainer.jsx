@@ -1,28 +1,29 @@
-import React from "react";
 import { actionCreator } from "../../redux/store-redux";
 import { Messages } from "./Messages";
+import { connect } from "react-redux";
 
-export const MessagesContainer = (props) => {
-  let message = React.createRef();
-
-  const updateMessages = () => {
-    let action = actionCreator("UPDATE-MESSAGE", null, message.current.value);
-    props.dispatch(action);
+const mapStateToProps = (state) => {
+  return {
+    chatInfo: state.messagePage.chatInfo,
+    messages: state.messagePage.messages,
+    newMessage: state.messagePage.newMessage,
   };
-
-  const addMessage = () => {
-    let action = actionCreator("ADD-MESSAGE", null, message.current.value);
-    props.dispatch(action);
-  };
-
-  return (
-    <Messages
-      addMessage={addMessage}
-      updateMessages={updateMessages}
-      message={message}
-      chatInfo={props.messagePage.chatInfo}
-      messages={props.messagePage.messages}
-      newMessage={props.messagePage.newMessage}
-    />
-  );
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addMessage: () => {
+      let action = actionCreator("ADD-MESSAGE", null, null);
+      dispatch(action);
+    },
+    updateMessages: (text) => {
+      let action = actionCreator("UPDATE-MESSAGE", null, text);
+      dispatch(action);
+    },
+  };
+};
+
+export const MessagesContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Messages);

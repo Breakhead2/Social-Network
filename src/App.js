@@ -13,26 +13,10 @@ export const App = (props) => {
   return (
     <div className="wrapper">
       <Header />
-      <Menu sideBar={props.state.sideBar} />
+      <Menu />
       <div className="wrapper-content">
-        <Route
-          path="/profile"
-          render={() => (
-            <Profile
-              profilePage={props.state.profilePage}
-              dispatch={props.dispatch}
-            />
-          )}
-        />
-        <Route
-          path="/messages"
-          render={() => (
-            <MessagesContainer
-              messagePage={props.state.messagePage}
-              dispatch={props.dispatch}
-            />
-          )}
-        />
+        <Route path="/profile" render={() => <Profile />} />
+        <Route path="/messages" render={() => <MessagesContainer />} />
         <Route path="/news" render={() => <News />} />
         <Route path="/music" render={() => <Music />} />
         <Route path="/settings" render={() => <Settings />} />

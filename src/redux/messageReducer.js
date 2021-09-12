@@ -21,7 +21,7 @@ export const messageReducer = (state = initialState, action) => {
     case ADD_MESSAGE:
       let newObj = {
         id: state.messages.length + 1,
-        text: action.message,
+        text: state.newMessage,
       };
       state.messages.push(newObj);
       state.newMessage = "";

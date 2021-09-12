@@ -14,7 +14,7 @@ export const profileReducer = (state = initialState, action) => {
     case ADD_POST:
       let newObj = {
         id: state.posts.length + 1,
-        text: action.message,
+        text: state.newPostText,
         likesCount: 0,
       };
       state.posts.push(newObj);

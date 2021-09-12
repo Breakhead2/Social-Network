@@ -11,6 +11,17 @@ export const Messages = (props) => {
     <ChatItem message={message.text} />
   ));
 
+  let newMessage = React.createRef();
+
+  const onUpdateMessages = () => {
+    let text = newMessage.current.value;
+    props.updateMessages(text);
+  };
+
+  const onAddMessage = () => {
+    props.addMessage();
+  };
+
   return (
     <div className={style.box}>
       <div className={style.chatRooms}>{ChatRoomElements}</div>
@@ -19,13 +30,13 @@ export const Messages = (props) => {
         <div className={style.form}>
           <input
             className={style.input}
-            ref={props.message}
+            ref={newMessage}
             value={props.newMessage}
-            onChange={props.updateMessages}
+            onChange={onUpdateMessages}
             placeholder={"write you message"}
             type="text"
           />
-          <button className={style.btn_send} onClick={props.addMessage}>
+          <button className={style.btn_send} onClick={onAddMessage}>
             Send
           </button>
         </div>
