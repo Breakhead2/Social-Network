@@ -2,27 +2,14 @@ import { ChatItem } from "./ChatItem/ChatItem";
 import React from "react";
 import { ChatRoom } from "./ChatRoom/ChatRoom";
 import style from "./Messages.module.css";
-import { actionCreator } from "../../redux/store-redux";
 
 export const Messages = (props) => {
-  let ChatRoomElements = props.messagePage.chatInfo.map((room) => (
+  let ChatRoomElements = props.chatInfo.map((room) => (
     <ChatRoom name={room.name} id={room.id} />
   ));
-  let ChatItemElements = props.messagePage.messages.map((message) => (
+  let ChatItemElements = props.messages.map((message) => (
     <ChatItem message={message.text} />
   ));
-
-  let message = React.createRef();
-
-  const updateMessages = () => {
-    let action = actionCreator("UPDATE-MESSAGE", null, message.current.value);
-    props.dispatch(action);
-  };
-
-  const addMessage = () => {
-    let action = actionCreator("ADD-MESSAGE", null, message.current.value);
-    props.dispatch(action);
-  };
 
   return (
     <div className={style.box}>
@@ -32,13 +19,13 @@ export const Messages = (props) => {
         <div className={style.form}>
           <input
             className={style.input}
-            ref={message}
-            value={props.messagePage.newMessage}
-            onChange={updateMessages}
+            ref={props.message}
+            value={props.newMessage}
+            onChange={props.updateMessages}
             placeholder={"write you message"}
             type="text"
           />
-          <button className={style.btn_send} onClick={addMessage}>
+          <button className={style.btn_send} onClick={props.addMessage}>
             Send
           </button>
         </div>
