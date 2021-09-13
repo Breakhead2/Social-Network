@@ -27,14 +27,19 @@
   font-style: italic;
 }
 .like {
+  display:flex;
   color: plum;
   margin-right: 20px;
-  cursor: pointer;
   transition: all, 1s;
-}
-.like:hover {
-  color: blueviolet;
+  cursor:pointer;
 }
 .likesCount {
+  color: blueviolet;
+  margin-right: 10px;
+}
+.likeCounter{
+  cursor:pointer;
+}
+.likeCounter:hover {
   color: blueviolet;
 }

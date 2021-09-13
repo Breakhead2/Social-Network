@@ -4,7 +4,7 @@ import { Post } from "./Post/Post";
 
 export const Mypost = (props) => {
   let postsElements = props.posts.map((post) => (
-    <Post message={post.text} img={post.id} likesCount={post.likesCount} />
+    <Post message={post.text} id={post.id} likesCount={post.likesCount} updateLikes = {props.updateLikes} />
   ));
 
   let myRef = React.createRef();
@@ -17,6 +17,7 @@ export const Mypost = (props) => {
     let text = myRef.current.value;
     props.updatePost(text);
   };
+
 
   return (
     <div className={style.myPost}>
