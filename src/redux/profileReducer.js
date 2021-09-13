@@ -19,22 +19,22 @@ export const profileReducer = (state = initialState, action) => {
         likesCount: 0,
       };
       return {
-         ...state,
-          posts: [...state.posts, newObj],
-          newPostText: "",
-        }
-    case UPDATE_POST: 
-      return { 
-      ...state,
-      newPostText: action.message,
+        ...state,
+        posts: [...state.posts, newObj],
+        newPostText: "",
       };
-    case UPDATE_LIKES: 
+    case UPDATE_POST:
+      return {
+        ...state,
+        newPostText: action.message,
+      };
+    case UPDATE_LIKES:
       let stateCopy = {
-          ...state,
-          posts: [...state.posts]
-          };
+        ...state,
+        posts: [...state.posts],
+      };
 
-      let post = stateCopy.posts.find(post => post.id == action.id);
+      let post = stateCopy.posts.find((post) => post.id == action.id);
       post.likesCount += 1;
       return stateCopy;
     default:

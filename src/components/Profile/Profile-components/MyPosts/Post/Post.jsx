@@ -1,11 +1,10 @@
 import style from "./Post.module.css";
 
 export const Post = (props) => {
-
-const onLikeCounter = (e) =>{
-let id = e.target.id;
-props.updateLikes(id);
-}
+  const onLikeCounter = (e) => {
+    let id = e.target.id;
+    props.updateLikes(id);
+  };
 
   return (
     <div className={style.item}>
@@ -15,7 +14,13 @@ props.updateLikes(id);
       </div>
       <div className={style.like}>
         <div className={style.likesCount}>{props.likesCount}</div>
-        <div className={style.likeCounter} id={props.id} onClick = { onLikeCounter }>Like</div>
+        <div
+          className={style.likeCounter}
+          id={props.id}
+          onClick={onLikeCounter}
+        >
+          Like
+        </div>
       </div>
     </div>
   );

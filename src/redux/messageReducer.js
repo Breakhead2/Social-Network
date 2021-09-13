@@ -17,22 +17,22 @@ let initialState = {
 };
 
 export const messageReducer = (state = initialState, action) => {
-  switch (action.type){
-    case ADD_MESSAGE: 
+  switch (action.type) {
+    case ADD_MESSAGE:
       let newObj = {
         id: state.messages.length + 1,
         text: state.newMessage,
       };
       return {
-         ...state,
-          messages:[...state.messages, newObj],
-          newMessage: "",
-          };
-    case UPDATE_MESSAGE: 
+        ...state,
+        messages: [...state.messages, newObj],
+        newMessage: "",
+      };
+    case UPDATE_MESSAGE:
       return {
-         ...state,
-         newMessage:action.message,
-          };
+        ...state,
+        newMessage: action.message,
+      };
     default:
       return state;
   }

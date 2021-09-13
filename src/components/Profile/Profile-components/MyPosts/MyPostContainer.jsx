@@ -20,9 +20,9 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(action);
     },
     updateLikes: (id) => {
-      let action = actionCreator("UPDATE-LIKES", id, null); 
+      let action = actionCreator("UPDATE-LIKES", id, null);
       dispatch(action);
-    }
+    },
   };
 };
 
