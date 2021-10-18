@@ -2,7 +2,7 @@
   "name": "network",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://breakhead2.github.io/Social-Network/public/index.html",
+  "homepage": "https://breakhead2.github.io/Social-Network/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
