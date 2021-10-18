@@ -8,20 +8,23 @@ import { News } from "./components/News/News";
 import { Music } from "./components/Music/Music";
 import { Settings } from "./components/Settings/Settings";
 import { MessagesContainer } from "./components/Messages/MessagesContainer";
+import { HashRouter } from "react-router-dom";
 
 export const App = (props) => {
   return (
-    <div className="wrapper">
-      <Header />
-      <Menu />
-      <div className="wrapper-content">
-        <Route path="/profile" render={() => <Profile />} />
-        <Route path="/messages" render={() => <MessagesContainer />} />
-        <Route path="/news" render={() => <News />} />
-        <Route path="/music" render={() => <Music />} />
-        <Route path="/settings" render={() => <Settings />} />
+    <HashRouter basename={process.env.PUBLIC_URL}>
+      <div className="wrapper">
+        <Header />
+        <Menu />
+        <div className="wrapper-content">
+          <Route path="/profile" render={() => <Profile />} />
+          <Route path="/messages" render={() => <MessagesContainer />} />
+          <Route path="/news" render={() => <News />} />
+          <Route path="/music" render={() => <Music />} />
+          <Route path="/settings" render={() => <Settings />} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </HashRouter>
   );
 };
